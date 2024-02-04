@@ -10,8 +10,8 @@ Homepage: https://www.openmediavault.org
 
 Package: openmediavault-calibreweb
 Architecture: all
-Depends: openmediavault (>= 7.0), podman, catatonit
+Depends: openmediavault (>= 6.5.4), podman, catatonit
 Priority: optional
-Description: calibreweb PhotoPrism plugin
+Description: openmediavault CalibreWeb plugin
  Calibre-Web is a web app that offers a clean and intuitive interface for browsing, reading,
  and downloading eBooks using a valid Calibre database.
