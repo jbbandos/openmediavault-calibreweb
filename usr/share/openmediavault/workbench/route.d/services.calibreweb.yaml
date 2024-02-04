@@ -1,0 +1,8 @@
+version: "1.0"
+type: route
+data:
+  url: "/services/calibreweb"
+  title: _("CalibreWeb")
+  editing: true
+  notificationTitle: _("Updated CalibreWeb settings.")
+  component: omv-services-calibreweb-form-page

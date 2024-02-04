@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the openmediavault-calibreweb package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-calibreweb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-03 12:25+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Application data"
+msgstr ""
+
+msgid "Certificate"
+msgstr ""
+
+msgid "Library"
+msgstr ""
+
+msgid "Open UI"
+msgstr ""
+
+msgid "CalibreWeb"
+msgstr ""
+
+msgid "Port"
+msgstr ""
+
+msgid "Port to listen on."
+msgstr ""
+
+msgid "The SSL certificate."
+msgstr ""
+
+msgid "The location of the calibre library. Make sure the user <em>calibreweb</em> or group <em>users</em> can access the files."
+msgstr ""
+
+msgid "The location where to store the application data."
+msgstr ""
+
+msgid "Updated CalibreWeb settings."
+msgstr ""
+
+msgid "Use the <em>admin:admin123</em> credentials when logging in for the first time. Please do not forget to change the password immediately."
+msgstr ""

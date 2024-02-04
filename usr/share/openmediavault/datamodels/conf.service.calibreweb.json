@@ -1,0 +1,51 @@
+{
+	"type": "config",
+	"id": "conf.service.calibreweb",
+	"title": "CalibreWeb ebooks gallery",
+	"queryinfo": {
+		"xpath": "//services/calibreweb",
+		"iterable": false
+	},
+	"properties": {
+		"enable": {
+			"type": "boolean",
+			"default": false
+		},
+		"port": {
+			"type": "integer",
+			"minimum": 1,
+			"maximum": 65535,
+			"default": 8083
+		},
+		"sslcertificateref": {
+			"type": "string",
+			"oneOf": [{
+				"type": "string",
+				"format": "uuidv4"
+			},{
+				"type": "string",
+				"maxLength": 0
+			}]
+		},
+		"appdata_sharedfolderref": {
+			"type": "string",
+			"oneOf": [{
+				"type": "string",
+				"format": "uuidv4"
+			},{
+				"type": "string",
+				"maxLength": 0
+			}]
+		},
+		"library_sharedfolderref": {
+			"type": "string",
+			"oneOf": [{
+				"type": "string",
+				"format": "uuidv4"
+			},{
+				"type": "string",
+				"maxLength": 0
+			}]
+		}
+	}
+}

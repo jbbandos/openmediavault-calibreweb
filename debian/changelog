@@ -1,0 +1,6 @@
+openmediavault-calibreweb (7.0-3) unstable; urgency=low
+
+  * Initial release.
+  * First attempt at an openmediavault plugin, based on the photoprism one.
+
+ -- Bernardo Bandos <jbbandos@hotmail.com>  Sat, 04 Feb 2024 10:03:01 +0100

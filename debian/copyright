@@ -1,0 +1,7 @@
+Format: http://dep.debian.net/deps/dep5
+Upstream-Contact: Bernardo Bandos <jbbandos@hotmail.com>
+Source: http://www.openmediavault.org
+
+Files: *
+Copyright: 2009-2024 Volker Theile <volker.theile@openmediavault.org>, 2024 Bernardo Bandos <jbbandos@hotmail.com>
+License: GPL-3

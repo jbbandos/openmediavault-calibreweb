@@ -1,0 +1,33 @@
+{%- set image = salt['pillar.get']('default:OMV_PHOTOPRISM_APP_CONTAINER_IMAGE', 'docker.io/calibreweb/calibreweb:latest') -%}
+{%- set options = salt['pillar.get']('default:OMV_PHOTOPRISM_APP_CONTAINER_START_OPTIONS', '') -%}
+{%- set uname = salt['pillar.get']('default:OMV_PHOTOPRISM_APP_CONTAINER_UNAME', 'calibreweb') -%}
+{%- set gname = salt['pillar.get']('default:OMV_PHOTOPRISM_APP_CONTAINER_GNAME', 'users') -%}
+{%- set uid = salt['user.info'](uname).uid -%}
+{%- set gid = salt['group.info'](gname).gid -%}
+{%- set library_path = salt['omv_conf.get_sharedfolder_path'](config.originals_sharedfolderref) -%}
+{%- set library_mnt_path = salt['omv_conf.get_sharedfolder_mount_path'](config.originals_sharedfolderref) -%}
+{%- set appdata_path = salt['omv_conf.get_sharedfolder_path'](config.appdata_sharedfolderref) -%}
+{%- set appdata_mnt_path = salt['omv_conf.get_sharedfolder_mount_path'](config.appdata_sharedfolderref) -%}
+{%- set ssl_enabled = config.sslcertificateref | length > 0 -%}
+{{ pillar['headers']['multiline'] -}}
+[Unit]
+Description=Podman container-calibreweb-app.service
+Wants=network.target
+After=network-online.target
+BindsTo=pod-calibreweb.service
+After=pod-calibreweb.service 
+RequiresMountsFor="{{ library_mnt_path }}" "{{ appdata_mnt_path }}"
+
+[Service]
+Environment=PODMAN_SYSTEMD_UNIT=%n
+Restart=on-failure
+TimeoutStopSec=70
+ExecStartPre=/bin/rm -f %t/container-calibreweb-app.pid %t/container-calibreweb-app.ctr-id
+ExecStart=/usr/bin/podman run --conmon-pidfile %t/container-calibreweb-app.pid --cidfile %t/container-calibreweb-app.ctr-id --cgroups=no-conmon --pod-id-file %t/pod-calibreweb.pod-id -d --replace --pull=never --name=calibreweb-app -p {{ ssl_enabled | yesno('8083,8083') }} -e PUID={{ uid }} -e PGID={{ gid }} -e TZ=Europe/Brussels -e OAUTHLIB_RELAX_TOKEN_SCOPE=1 -v "{{ library_path }}":/books/ -v "{{ appdata_path }}/config/":/calibreweb/config/  {{ options }} {{ image }}
+ExecStop=/usr/bin/podman stop --ignore --cidfile %t/container-calibreweb-app.ctr-id
+ExecStopPost=/usr/bin/podman rm --ignore -f --cidfile %t/container-calibreweb-app.ctr-id
+PIDFile=%t/container-calibreweb-app.pid
+Type=forking
+
+[Install]
+WantedBy=multi-user.target default.target
