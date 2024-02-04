@@ -49,7 +49,7 @@ class CalibreWeb extends \OMV\Engine\Module\ServiceAbstract
 			"operator" => "or",
 			"arg0" => [
 				"operator" => "stringEquals",
-				"arg0" => "originals_sharedfolderref",
+				"arg0" => "library_sharedfolderref",
 				"arg1" => $object['uuid']
 			],
 			"arg1" => [
@@ -57,11 +57,6 @@ class CalibreWeb extends \OMV\Engine\Module\ServiceAbstract
 				"arg0" => [
 					"operator" => "stringEquals",
 					"arg0" => "appdata_sharedfolderref",
-					"arg1" => $object['uuid']
-				],
-				"arg1" => [
-					"operator" => "stringEquals",
-					"arg0" => "import_sharedfolderref",
 					"arg1" => $object['uuid']
 				]
 			]

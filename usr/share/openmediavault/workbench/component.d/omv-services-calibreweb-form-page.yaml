@@ -37,7 +37,7 @@ data:
         hasEmptyOption: true
         value: ""
       - type: sharedFolderSelect
-        name: originals_sharedfolderref
+        name: library_sharedfolderref
         label: _("Library")
         hint: _("The location of the calibre library. Make sure the user <em>calibreweb</em> or group <em>users</em> can access the files.")
         hasEmptyOption: true

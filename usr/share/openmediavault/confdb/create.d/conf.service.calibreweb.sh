@@ -31,7 +31,7 @@ set -e
 #       <enable>0|1</enable>
 #       <port>8083</port>
 #       <sslcertificateref></sslcertificateref>
-#       <originals_sharedfolderref></library_sharedfolderref>
+#       <library_sharedfolderref></library_sharedfolderref>
 #       <appdata_sharedfolderref></appdata_sharedfolderref>
 #     </calibreweb>
 #   </services>
