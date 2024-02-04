@@ -13,4 +13,5 @@ Architecture: all
 Depends: openmediavault (>= 7.0), podman, catatonit
 Priority: optional
 Description: calibreweb PhotoPrism plugin
-Calibre-Web is a web app that offers a clean and intuitive interface for browsing, reading, and downloading eBooks using a valid Calibre database.
+ Calibre-Web is a web app that offers a clean and intuitive interface for browsing, reading,
+ and downloading eBooks using a valid Calibre database.
