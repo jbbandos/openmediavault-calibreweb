@@ -29,7 +29,7 @@ set -e
 #   <services>
 #     <calibreweb>
 #       <enable>0|1</enable>
-#       <port>8083</port>
+#       <port>2583</port>
 #       <sslcertificateref></sslcertificateref>
 #       <library_sharedfolderref></library_sharedfolderref>
 #       <appdata_sharedfolderref></appdata_sharedfolderref>
@@ -40,7 +40,7 @@ set -e
 if ! omv_config_exists "/config/services/calibreweb"; then
 	omv_config_add_node "/config/services" "calibreweb"
 	omv_config_add_key "/config/services/calibreweb" "enable" "0"
-	omv_config_add_key "/config/services/calibreweb" "port" "8083"
+	omv_config_add_key "/config/services/calibreweb" "port" "2583"
 	omv_config_add_key "/config/services/calibreweb" "sslcertificateref" ""
 	omv_config_add_key "/config/services/calibreweb" "library_sharedfolderref" ""
 	omv_config_add_key "/config/services/calibreweb" "appdata_sharedfolderref" ""

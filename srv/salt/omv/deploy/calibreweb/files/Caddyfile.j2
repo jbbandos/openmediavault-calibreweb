@@ -1,7 +1,7 @@
 {
   admin off
 }
-:8083 {
+:2583 {
   tls /data/cert.crt /data/cert.key
   header -Server
   reverse_proxy http://calibreweb-app:8083 {

@@ -39,11 +39,11 @@
 
 create_calibreweb_appdata_storage_dir:
   file.directory:
-    - name: "{{ appdata_sf_path }}/storage/"
+    - name: "{{ appdata_sf_path }}/books/"
 
-create_calibreweb_appdata_db_dir:
+create_calibreweb_appdata_config_dir:
   file.directory:
-    - name: "{{ appdata_sf_path }}/db/"
+    - name: "{{ appdata_sf_path }}/config/"
 
 create_calibreweb_app_container_systemd_unit_file:
   file.managed:

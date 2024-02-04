@@ -3,5 +3,5 @@ type: navigation-item
 data:
   path: "services.calibreweb"
   text: _("CalibreWeb")
-  icon: "mdi:triangle-outline"
+  icon: "mdi:book-multiple"
   url: "/services/calibreweb"

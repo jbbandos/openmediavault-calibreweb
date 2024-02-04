@@ -24,7 +24,7 @@ data:
         name: port
         label: _("Port")
         hint: _("Port to listen on.")
-        value: 8083
+        value: 2583
         validators:
           min: 1
           max: 65535
