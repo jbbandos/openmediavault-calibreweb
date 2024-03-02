@@ -23,7 +23,7 @@ Environment=PODMAN_SYSTEMD_UNIT=%n
 Restart=on-failure
 TimeoutStopSec=70
 ExecStartPre=/bin/rm -f %t/container-calibreweb-app.pid %t/container-calibreweb-app.ctr-id
-ExecStart=/usr/bin/podman run --conmon-pidfile %t/container-calibreweb-app.pid --cidfile %t/container-calibreweb-app.ctr-id --cgroups=no-conmon --pod-id-file %t/pod-calibreweb.pod-id -d --replace --pull=never --name=calibreweb-app -e PUID={{ uid }} -e PGID={{ gid }} -e TZ=Europe/Brussels -e OAUTHLIB_RELAX_TOKEN_SCOPE=1 -v "{{ library_path }}":/books/ -v "{{ appdata_path }}/config/":/calibreweb/config/  {{ options }} {{ image }}
+ExecStart=/usr/bin/podman run --conmon-pidfile %t/container-calibreweb-app.pid --cidfile %t/container-calibreweb-app.ctr-id --cgroups=no-conmon --pod-id-file %t/pod-calibreweb.pod-id -d --replace --pull=never --name=calibreweb-app -e PUID={{ uid }} -e PGID={{ gid }} -e TZ=Europe/Brussels -e OAUTHLIB_RELAX_TOKEN_SCOPE=1 -v "{{ library_path }}":/books/ -v "{{ appdata_path }}/config/":/config/  {{ options }} {{ image }}
 ExecStop=/usr/bin/podman stop --ignore --cidfile %t/container-calibreweb-app.ctr-id
 ExecStopPost=/usr/bin/podman rm --ignore -f --cidfile %t/container-calibreweb-app.ctr-id
 PIDFile=%t/container-calibreweb-app.pid
